@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epsilon-Delta Definition of Limits: Study Guide</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            color: #333;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+        }
+        
+        .definition {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .example {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .solution {
+            background-color: #f0f8f0;
+            border-left: 4px solid #27ae60;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        .warning {
+            background-color: #fef5e7;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .math {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: bold;
+        }
+        
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+        }
+        
+        li {
+            margin: 5px 0;
+        }
+        
+        .greek {
+            font-style: italic;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        .checkmark {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .practice {
+            background-color: #fdf2e9;
+            border: 1px solid #e67e22;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        @media print {
+            body {
+                font-size: 12pt;
+                line-height: 1.4;
+            }
+            .example, .solution, .warning, .practice {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Epsilon-Delta Definition of Limits: Study Guide</h1>
+
+    <h2>Introduction</h2>
+    <p>The epsilon-delta (<span class="greek">ε-δ</span>) definition of a limit is the rigorous, formal way to define what we mean when we say "the limit of <span class="math">f(x)</span> as <span class="math">x</span> approaches <span class="math">a</span> equals <span class="math">L</span>." While you may have learned limits through graphs and intuition, this definition provides the mathematical foundation that makes calculus precise.</p>
+
+    <h2>The Formal Definition</h2>
+    <div class="definition">
+        <p><strong>Definition</strong>: We say that the limit of <span class="math">f(x)</span> as <span class="math">x</span> approaches <span class="math">a</span> equals <span class="math">L</span>, written as:</p>
+        
+        <p style="text-align: center; font-size: 1.2em; margin: 15px 0;">
+            <span class="math">lim[x→a] f(x) = L</span>
+        </p>
+        
+        <p>if and only if:</p>
+        
+        <p style="text-align: center; font-weight: bold; margin: 15px 0; padding: 10px; background-color: white; border-radius: 5px;">
+            For every <span class="greek">ε</span> > 0, there exists a <span class="greek">δ</span> > 0 such that whenever 0 < |<span class="math">x - a</span>| < <span class="greek">δ</span>, we have |<span class="math">f(x) - L</span>| < <span class="greek">ε</span>.
+        </p>
+    </div>
+
+    <h2>Breaking Down the Definition</h2>
+    <p>Let's understand each part:</p>
+    <ul>
+        <li><strong><span class="greek">ε</span> (epsilon)</strong>: A small positive number representing how close <span class="math">f(x)</span> must be to <span class="math">L</span></li>
+        <li><strong><span class="greek">δ</span> (delta)</strong>: A small positive number representing how close <span class="math">x</span> must be to <span class="math">a</span></li>
+        <li><strong>|<span class="math">f(x) - L</span>| < <span class="greek">ε</span></strong>: The distance between <span class="math">f(x)</span> and <span class="math">L</span> is less than <span class="greek">ε</span></li>
+        <li><strong>0 < |<span class="math">x - a</span>| < <span class="greek">δ</span></strong>: The distance between <span class="math">x</span> and <span class="math">a</span> is less than <span class="greek">δ</span>, but <span class="math">x ≠ a</span></li>
+    </ul>
+
+    <h3>The Logic</h3>
+    <p>The definition says: "No matter how small a tolerance <span class="greek">ε</span> you give me around <span class="math">L</span>, I can find a corresponding tolerance <span class="greek">δ</span> around <span class="math">a</span> such that all function values within <span class="greek">δ</span> of <span class="math">a</span> (except at <span class="math">a</span> itself) will be within <span class="greek">ε</span> of <span class="math">L</span>."</p>
+
+    <h2>Geometric Interpretation</h2>
+    <p>Imagine drawing horizontal lines at <span class="math">y = L + ε</span> and <span class="math">y = L - ε</span>, creating a "tolerance band" around <span class="math">L</span>. The definition says we can always find vertical lines at <span class="math">x = a - δ</span> and <span class="math">x = a + δ</span> such that the graph of <span class="math">f(x)</span> stays within the tolerance band for all <span class="math">x</span>-values between these vertical lines (except at <span class="math">x = a</span>).</p>
+
+    <h2>Example 1: Simple Linear Function</h2>
+    <div class="example">
+        <p><strong>Prove</strong>: <span class="math">lim[x→3] (2x + 1) = 7</span></p>
+        
+        <div class="solution">
+            <p><strong>Solution</strong>:</p>
+            <p>We need to show that for any <span class="greek">ε</span> > 0, we can find <span class="greek">δ</span> > 0 such that:</p>
+            <p>If 0 < |<span class="math">x - 3</span>| < <span class="greek">δ</span>, then |<span class="math">(2x + 1) - 7</span>| < <span class="greek">ε</span></p>
+            
+            <p>First, let's simplify the expression we want to be small:</p>
+            <p>|<span class="math">(2x + 1) - 7</span>| = |<span class="math">2x - 6</span>| = 2|<span class="math">x - 3</span>|</p>
+            
+            <p>We want: 2|<span class="math">x - 3</span>| < <span class="greek">ε</span></p>
+            <p>This means: |<span class="math">x - 3</span>| < <span class="greek">ε</span>/2</p>
+            
+            <p>So if we choose <span class="greek">δ</span> = <span class="greek">ε</span>/2, then whenever 0 < |<span class="math">x - 3</span>| < <span class="greek">δ</span>, we have:</p>
+            <p>|<span class="math">(2x + 1) - 7</span>| = 2|<span class="math">x - 3</span>| < 2(<span class="greek">ε</span>/2) = <span class="greek">ε</span> <span class="checkmark">✓</span></p>
+            
+            <p><strong>Answer</strong>: For any <span class="greek">ε</span> > 0, choose <span class="greek">δ</span> = <span class="greek">ε</span>/2.</p>
+        </div>
+    </div>
+
+    <h2>Example 2: Quadratic Function</h2>
+    <div class="example">
+        <p><strong>Prove</strong>: <span class="math">lim[x→2] x² = 4</span></p>
+        
+        <div class="solution">
+            <p><strong>Solution</strong>:</p>
+            <p>We need: |<span class="math">x² - 4</span>| < <span class="greek">ε</span> whenever 0 < |<span class="math">x - 2</span>| < <span class="greek">δ</span></p>
+            
+            <p>Factor the expression: |<span class="math">x² - 4</span>| = |<span class="math">x - 2</span>||<span class="math">x + 2</span>|</p>
+            
+            <p>The challenge is that |<span class="math">x + 2</span>| isn't constant. We need to bound it.</p>
+            
+            <p>If we restrict <span class="math">x</span> to be within 1 unit of 2 (i.e., 1 < <span class="math">x</span> < 3), then:</p>
+            <p>3 < <span class="math">x + 2</span> < 5, so |<span class="math">x + 2</span>| < 5</p>
+            
+            <p>Now: |<span class="math">x² - 4</span>| = |<span class="math">x - 2</span>||<span class="math">x + 2</span>| < 5|<span class="math">x - 2</span>|</p>
+            
+            <p>For this to be less than <span class="greek">ε</span>, we need: 5|<span class="math">x - 2</span>| < <span class="greek">ε</span>, so |<span class="math">x - 2</span>| < <span class="greek">ε</span>/5</p>
+            
+            <p><strong>Answer</strong>: Choose <span class="greek">δ</span> = min(1, <span class="greek">ε</span>/5). This ensures both that |<span class="math">x + 2</span>| < 5 and that |<span class="math">x² - 4</span>| < <span class="greek">ε</span>.</p>
+        </div>
+    </div>
+
+    <h2>Example 3: Rational Function</h2>
+    <div class="example">
+        <p><strong>Prove</strong>: <span class="math">lim[x→1] (3x + 2)/(x + 1) = 5/2</span></p>
+        
+        <div class="solution">
+            <p><strong>Solution</strong>:</p>
+            <p>We need: |<span class="math">(3x + 2)/(x + 1) - 5/2</span>| < <span class="greek">ε</span> whenever 0 < |<span class="math">x - 1</span>| < <span class="greek">δ</span></p>
+            
+            <p>Simplify the expression:</p>
+            <p>|<span class="math">(3x + 2)/(x + 1) - 5/2</span>| = |<span class="math">(2(3x + 2) - 5(x + 1))/(2(x + 1))</span>| = |<span class="math">(6x + 4 - 5x - 5)/(2(x + 1))</span>| = |<span class="math">x - 1</span>|/(2|<span class="math">x + 1</span>|)</p>
+            
+            <p>We need to bound |<span class="math">x + 1</span>| from below. If we keep <span class="math">x</span> within 1/2 of 1 (i.e., 1/2 < <span class="math">x</span> < 3/2), then:</p>
+            <p>3/2 < <span class="math">x + 1</span> < 5/2, so |<span class="math">x + 1</span>| > 3/2</p>
+            
+            <p>Therefore: |<span class="math">x - 1</span>|/(2|<span class="math">x + 1</span>|) < |<span class="math">x - 1</span>|/(2 · 3/2) = |<span class="math">x - 1</span>|/3</p>
+            
+            <p>For this to be less than <span class="greek">ε</span>: |<span class="math">x - 1</span>|/3 < <span class="greek">ε</span>, so |<span class="math">x - 1</span>| < 3<span class="greek">ε</span></p>
+            
+            <p><strong>Answer</strong>: Choose <span class="greek">δ</span> = min(1/2, 3<span class="greek">ε</span>).</p>
+        </div>
+    </div>
+
+    <h2>Example 4: Function with a Jump (Limit Does Not Exist)</h2>
+    <div class="example">
+        <p><strong>Show</strong>: <span class="math">lim[x→0] |x|/x</span> does not exist</p>
+        
+        <div class="solution">
+            <p><strong>Analysis</strong>:</p>
+            <p><span class="math">f(x) = |x|/x = {1 if x > 0, -1 if x < 0}</span></p>
+            
+            <p>For the limit to exist and equal some value <span class="math">L</span>, we would need to find <span class="greek">δ</span> > 0 such that for any <span class="greek">ε</span> > 0:</p>
+            <p>If 0 < |<span class="math">x</span>| < <span class="greek">δ</span>, then |<span class="math">|x|/x - L</span>| < <span class="greek">ε</span></p>
+            
+            <p>But for any <span class="greek">δ</span> > 0, we can find <span class="math">x₁</span> and <span class="math">x₂</span> with 0 < |<span class="math">x₁</span>|, |<span class="math">x₂</span>| < <span class="greek">δ</span> such that:</p>
+            <ul>
+                <li><span class="math">f(x₁) = 1</span> (when <span class="math">x₁ > 0</span>)</li>
+                <li><span class="math">f(x₂) = -1</span> (when <span class="math">x₂ < 0</span>)</li>
+            </ul>
+            
+            <p>This means |<span class="math">f(x₁) - f(x₂)</span>| = |1 - (-1)| = 2</p>
+            
+            <p>No single value <span class="math">L</span> can be within <span class="greek">ε</span> of both 1 and -1 when <span class="greek">ε</span> < 1.</p>
+        </div>
+    </div>
+
+    <h2>Example 5: More Complex Function</h2>
+    <div class="example">
+        <p><strong>Prove</strong>: <span class="math">lim[x→0] x²sin(1/x) = 0</span> (when <span class="math">x ≠ 0</span>)</p>
+        
+        <div class="solution">
+            <p><strong>Solution</strong>:</p>
+            <p>Since sin(1/x) is bounded: -1 ≤ sin(1/x) ≤ 1 for <span class="math">x ≠ 0</span></p>
+            
+            <p>Therefore: |<span class="math">x²sin(1/x) - 0</span>| = |<span class="math">x²</span>||sin(1/x)| ≤ |<span class="math">x²</span>| · 1 = <span class="math">x²</span></p>
+            
+            <p>We want <span class="math">x²</span> < <span class="greek">ε</span>, which gives us |<span class="math">x</span>| < √<span class="greek">ε</span></p>
+            
+            <p><strong>Answer</strong>: For any <span class="greek">ε</span> > 0, choose <span class="greek">δ</span> = √<span class="greek">ε</span>. Then whenever 0 < |<span class="math">x</span>| < <span class="greek">δ</span>, we have |<span class="math">x²sin(1/x)</span>| < <span class="greek">ε</span>.</p>
+        </div>
+    </div>
+
+    <h2>Common Strategies</h2>
+    <ol>
+        <li><strong>Work backwards</strong>: Start with |<span class="math">f(x) - L</span>| and manipulate it to find a relationship with |<span class="math">x - a</span>|</li>
+        <li><strong>Factor and bound</strong>: For polynomials and rational functions, factor expressions and bound terms that aren't directly related to |<span class="math">x - a</span>|</li>
+        <li><strong>Use restrictions</strong>: Sometimes restrict the domain (choose <span class="greek">δ</span> ≤ some constant) to make bounding easier</li>
+        <li><strong>Triangle inequality</strong>: |<span class="math">a + b</span>| ≤ |<span class="math">a</span>| + |<span class="math">b</span>| and ||<span class="math">a</span>| - |<span class="math">b</span>|| ≤ |<span class="math">a - b</span>| can be helpful</li>
+    </ol>
+
+    <h2>Practice Problems</h2>
+    <div class="practice">
+        <ol>
+            <li>Prove: <span class="math">lim[x→5] (3x - 7) = 8</span></li>
+            <li>Prove: <span class="math">lim[x→1] x³ = 1</span></li>
+            <li>Prove: <span class="math">lim[x→2] 1/(x + 1) = 1/3</span></li>
+            <li>Show that: <span class="math">lim[x→0] x sin(1/x²) = 0</span> (when <span class="math">x ≠ 0</span>)</li>
+        </ol>
+    </div>
+
+    <h2>Tips for Success</h2>
+    <ul>
+        <li><strong>Start simple</strong>: Master linear functions before moving to polynomials and rational functions</li>
+        <li><strong>Show your work</strong>: Always show how you choose <span class="greek">δ</span> in terms of <span class="greek">ε</span></li>
+        <li><strong>Check your answer</strong>: Verify that your choice of <span class="greek">δ</span> actually works</li>
+        <li><strong>Practice regularly</strong>: The more problems you solve, the more patterns you'll recognize</li>
+        <li><strong>Understand the geometry</strong>: Visualizing the <span class="greek">ε-δ</span> process helps build intuition</li>
+    </ul>
+
+    <h2>Common Mistakes to Avoid</h2>
+    <div class="warning">
+        <ul>
+            <li>Forgetting the restriction 0 < |<span class="math">x - a</span>| (<span class="math">x</span> cannot equal <span class="math">a</span>)</li>
+            <li>Not properly bounding expressions when dealing with products</li>
+            <li>Choosing <span class="greek">δ</span> too large and not ensuring all necessary conditions are met</li>
+            <li>Confusing the roles of <span class="greek">ε</span> and <span class="greek">δ</span></li>
+        </ul>
+    </div>
+
+    <p style="margin-top: 30px; font-style: italic; text-align: center;">
+        Remember: The epsilon-delta definition is the foundation of mathematical analysis. While it may seem abstract at first, mastering it will deepen your understanding of continuity, derivatives, and the entire structure of calculus.
+    </p>
+</body>
+</html>
